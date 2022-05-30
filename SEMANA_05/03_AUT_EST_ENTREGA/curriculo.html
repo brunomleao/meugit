@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Meu currículo</title>
+    <style>
+        body {
+            font: normal 20pt Arial;
+        }
+        header {
+            text-align: center;
+        }
+        img { 
+            border-radius: 200px;
+        }
+        h2 {
+            background-color: gray;
+        }
+        h3 {
+            background-color: gray;
+        }
+        h4{
+            background-color: gray;
+        }
+        h5 {
+            background-color: gray;
+        }
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header><img src="eu.JPG" alt="Minha foto" width="300">
+    <h1>Bruno Moitinho Leão</h1>
+    </header>
+
+    <p>Atualmente estou cursando Engenharia de computação no Inteli; Possuo como objetivo entrar no mercado de trabalho tendo a possibilidade de aplicar meus conhecimentos teóricos e práticos em casos reais, visando tanto meu desenvolvimento profissional, como o crescimento da empresa.</p>
+
+    <h2>
+        Formação acadêmica
+    </h2>
+    <p>
+        Ensino Médio Completo - Colégio Leonardo da Vinci(Jundiaí/SP)- 2019
+    </p>
+
+    <h3>
+        Idiomas
+    </h3>
+    <p>
+        Português e inglês.
+    </p>
+
+    <h4>
+        Informações complementares
+    </h4>
+    <ul>
+       <li> Curso Technoleader: Curso de robótica, liderança e empreendedorismo com carga horária total de 180 horas. 2013</li>
+        
+      <li> Excel avançado, programação em VBA.</li>
+        
+        <li> Noção intermediária na linguagem de programação Python.</li>
+
+    </ul>
+    <h5>
+        Adicionar comentário
+    </h5>
+    Insira aqui a mensagem a ser adicionada: <input type="text" name="texto" id="texto">
+    <input type="button" value="Adicionar" onclick="adicionar()">
+    <br>
+    <div id="mensagem"></div>
+    <div id="linha"></div>
+    <footer>
+        <a href="https://www.linkedin.com/in/bruno-le%C3%A3o-40061a231/" target="_blank">LinkedIn</a>
+    </footer>
+    <script>
+        var i = 1
+        function adicionar() {
+            var texto = document.getElementById("texto").value
+            var mensagem = document.getElementById("mensagem")
+            mensagem.innerHTML += `Mensagem ${i}: ${texto}<br>`
+            i+=1
+        }
+        $(document).ready(function () {$('#linha').html('Obrigado por ter lido até aqui!')
+})
+    </script>
+</body>
+</html>
