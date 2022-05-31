@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca binária</title>
+</head>
+<body>
+    <h1>Busca binária</h1>
+    Insira aqui o sua lista de números inteiros, sendo que esse valor deve ser entre 0 e 9; e separados por vírgula: <input type="text" name="num" id="num">
+    <br> <br>
+    Insira aqui o valor-alvo: <input type="text" name="valoralvo" id="valoralvo">
+    <br>
+    <input type="button" value="Rodar" onclick="ordenou()">
+    <div id="res"></div>
+</body>
+<script>
+    function ordenou() {
+        var res = document.getElementById('res')
+        var lista = (document.getElementById('num').value)
+        var vetor = lista.split(",")
+        var valor_alvo = document.getElementById('valoralvo').value
+        var n = vetor.length
+        
+        res.innerHTML=("")
+  
+        for (var i = 0; i < n; i++) { 
+            for (var j = 0; j < n; j++) { 
+                   if(vetor[j] > vetor[j+1]) {
+                           var num = vetor[j]; 
+                vetor[j] = vetor[j+1]; 
+                vetor[j+1] = num; 
+            }
+        }        
+    }
+
+    var posicao = (vetor.indexOf(valor_alvo)+1)
+    res.innerHTML += `A lista de números ordenada será de: ${vetor}`
+    res.innerHTML += `<br>A posição do valor-alvo será ${posicao}`
+}
+        
+</script>
+</html>

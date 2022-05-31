@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+</head>
+<body>
+    <h1>Caixa Eletrônico</h1>
+    Insira o valor que deseja sacar: <input type="text" name="valor" id="valor">
+    <input type="button" value="Sacar" onclick="sacou()">
+    <div id="res"></div>
+    <script>
+        function sacou() {
+
+var valor = Number(document.getElementById("valor").value)
+var nota1 = 1
+var nota2 = 2
+var nota5 = 5
+var nota10 = 10
+var nota20 = 20
+var nota50 = 50
+var nota100 = 100
+
+var q1 = 0
+var q2 = 0
+var q5 = 0
+var q10 = 0
+var q20 = 0
+var q50 = 0
+var q100 = 0
+
+var res = document.getElementById("res")
+res.innerHTML = ""
+
+if (valor<=0) {
+    res.innerHTML += ("Não é possível sacar um valor nulo ou negativo! Insira um valor válido.")
+}
+
+if (valor>0) {
+    q100 = Math.floor(valor/nota100)
+    var resto = valor % nota100
+}
+
+if (resto>=50) {
+    q50 = Math.floor(resto / nota50)
+    resto = resto % nota50
+}
+
+if (resto>=20) {
+    q20 = Math.floor(resto / nota20)
+    resto = resto % nota20
+}
+
+if (resto>=10) {
+    q10 = Math.floor(resto / nota10)
+    resto = resto % nota10
+}
+
+if (resto>=5) {
+    q5 = Math.floor(resto / nota5)
+    resto = resto % nota5
+}
+
+if (resto>=2) {
+    q2 = Math.floor(resto / nota2)
+    resto = resto % nota2
+}
+
+if (resto>=1) {
+    q1 = Math.floor(resto / nota1)
+}
+
+
+if (q100>0) {
+    res.innerHTML = `Serão ${q100} nota(s) de 100 reais; `
+} 
+
+
+if (q50>0) {
+    res.innerHTML += `Serão ${q50} nota(s) de 50 reais; `
+} 
+
+if (q20>0) {
+    res.innerHTML += `Serão ${q20} nota(s) de 20 reais; `
+} 
+
+if (q10>0) {
+    res.innerHTML += `Serão ${q10} nota(s) de 10 reais; `
+}   
+if (q5>0) {
+    res.innerHTML += `Serão ${q5} nota(s) de 5 reais; `
+}
+
+if (q2>0) {
+    res.innerHTML += `Serão ${q2} nota(s) de 2 reais; `
+} 
+
+if (q1>0) {
+    res.innerHTML += `Serão ${q1} moeda(s) de 1 real; `
+}
+
+
+}
+    </script>
+</body>
+</html>

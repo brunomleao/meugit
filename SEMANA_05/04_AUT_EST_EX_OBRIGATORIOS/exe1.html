@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    Selecione a operação que deseja fazer input <select id="contas">
+        <option value="soma">+</option>
+        <option value="subtração">-</option>
+        <option value="mult">*</option>
+        <option value="divisao">/</option>
+        <option value="divisaoint">//</option>
+        <option value="restdiv">%</option>
+    </select> <br><br>
+    Insira os valores <input type="number" name="num1" id="num1"> <input type="number" name="num2" id="num2">
+    <input type="button" value="Calcule" onclick="operação()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function operação() {
+            var ope = document.getElementById("contas").value
+            var num1 = Number(document.getElementById("num1").value)
+            var num2 = Number(document.getElementById("num2").value)
+            var res = document.getElementById("res")
+            res.innerHTML = ("")
+            var resultado
+            if (ope=="soma") {
+                resultado = num1 + num2 
+            }
+            if (ope=="subtração") {
+                resultado = num1 - num2 
+            }
+            if (ope=="mult") {
+                resultado = num1 * num2 
+            }
+            if (ope=="divisao") {
+                resultado = num1 / num2 
+            }
+            if (ope=="divisaoint") {
+                resultado = Math.floor(num1 / num2)
+            }
+            if (ope=="restdiv") {
+                resultado = num1 % num2 
+            }
+            res.innerHTML=(`O resultado da operação será ${resultado}`)
+        }
+    </script>
+</body>
+</html>
