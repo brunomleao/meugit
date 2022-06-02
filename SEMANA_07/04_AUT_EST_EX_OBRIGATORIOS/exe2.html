@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca</title>
+</head>
+<body>
+    <h1>Troca de valores</h1>
+    Insira aqui as palavras: <input type="text" name="pal1" id="pal1">
+    <input type="text" name="pal2" id="pal2">
+    <input type="button" value="Troca" onclick="troca()">
+    <script>
+        function troca() {
+            var pal1 = document.getElementById("pal1").value
+            var pal2 = document.getElementById("pal2").value
+            document.getElementById("pal1").value = pal2
+            document.getElementById("pal2").value = pal1
+        }
+    </script>
+</body>
+</html>

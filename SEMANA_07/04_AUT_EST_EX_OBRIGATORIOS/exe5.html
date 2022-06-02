@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema</title>
+</head>
+<body>
+    <h1>Sistema escolar de notas</h1>
+    Insira a quantidade de alunos: <input type="number" name="alunos" id="alunos"><br><br>
+    <input type="button" value="Inserir informações (adicionar notas)" onclick="mostrar()">
+    <br><br>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <input type="button" value="Calcular" onclick="calcule()">
+
+    <script>
+        function mostrar(){
+            var n = Number(document.getElementById("alunos").value)
+            var res1 = document.getElementById("res1")
+            res1.innerHTML = ("")
+            for(i=0;i<n;i++){
+                res1.innerHTML += (`Nota do aluno ${i+1} na prova: <input type="number" name="alunosp${[i]}" id="alunosp${[i]}"> <br>`)
+                res1.innerHTML += (`Nota do aluno ${i+1} no trabalho: <input type="number" name="alunost${[i]}" id="alunost${[i]}"> <br><br>`)
+            }
+        }
+        function calcule(){
+            var n = Number(document.getElementById("alunos").value)
+            var res2 = document.getElementById("res2")
+            res2.innerHTML=""
+            var prova =[]
+            var trabalho=[]
+            var media =[]
+            var somap = 0
+            var somat = 0
+            for(i=0;i<n;i++){
+                prova[i]=Number(document.getElementById(`alunosp${i}`).value)
+                trabalho[i]=Number(document.getElementById(`alunost${i}`).value)
+                media[i]=(((prova[i]*2)+(trabalho[i]*3))/5)
+                somap += prova[i]
+                somat += trabalho[i]
+        }
+        var mediap = somap/n
+        var mediat = somat/n
+        var menorp = Math.min(...prova)
+        var maiorp = Math.max(...prova)
+        var menort = Math.min(...trabalho)
+        var maiort = Math.max(...trabalho)
+        console.log(typeof trabalho)
+
+        for(i=0;i<n;i++){
+            res2.innerHTML += (`Média do aluno ${i+1}: ${media[i]}<br>`)
+        }
+        var mediageral = (somap+somat)/(n*2)
+        res2.innerHTML +=(`<br>Media geral: ${mediageral}<br>`)
+        res2.innerHTML +=(`<br>Média aritmética das notas de prova: ${mediap}<br>`)
+        res2.innerHTML +=(`<br>Média aritmética das notas de trabalho: ${mediat}<br>`)
+        res2.innerHTML +=(`<br>Menor nota de prova é ${menorp} e a maior nota é ${maiorp}<br>`)
+        res2.innerHTML +=(`<br>Menor nota de trabalho é ${menort} e a maior nota é ${maiort}<br>`)
+        }
+    </script>
+</body>
+</html>

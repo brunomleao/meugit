@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <title>Calculadora</title>
+    <h1>Calculadora de vôo</h1>
+    Insira aqui a quantidade de pessoas: <input type="number" name="qpessoas" id="qpessoas"><br><br>
+    Horário do vôo <select id="horario">
+        <option value="dia">Diurno</option>
+        <option value="noite">Noturno</option>    
+    </select> <br><br>
+    <input type="button" value="Calcular" onclick="calcule()"> <br><br>
+    <div id="res"></div>
+    <script>
+        function calcule(){
+            var quant = document.getElementById("qpessoas").value
+            var horario = document.getElementById("horario").value
+            var res = document.getElementById("res")
+            
+           var desconto = horario=="dia" ? quant>50 ? "descontodia" : "semdescontodia" : quant>50 ? "descontonoite":"semdescontonoite"
+           
+            if (desconto == "descontodia") {
+                var preco = quant*(200*0.6)
+            }
+            if (desconto == "semdescontodia") {
+                var preco = quant*(200)
+            }
+            if (desconto == "descontonoite") {
+                var preco = quant*(100*0.8)
+            }
+            if (desconto == "semdescontonoite") {
+                var preco = quant*(100)
+            }
+            res.innerHTML=(`Valor final será: R$ ${preco}`)
+        }
+    </script>
+</body>
+</html>

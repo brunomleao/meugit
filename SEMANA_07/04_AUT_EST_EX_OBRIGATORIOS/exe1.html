@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <h1>Quantidade de um produto</h1>
+    Insira a quantidade do produto: <input type="number" name="prod" id="prod"> 
+    <input type="button" value="Aumentar 1 unidade" onclick="aumentou()"> 
+    <input type="button" value="Diminuir 1 unidade" onclick="diminuiu()">
+    <script>
+        function aumentou() {
+            var prod = Number(document.getElementById("prod").value)
+            prod ++
+            document.getElementById("prod").value = (prod)
+        }
+        function diminuiu() {
+            var prod = Number(document.getElementById("prod").value)
+            
+            prod --
+            document.getElementById("prod").value = (prod)
+        }
+    </script>   
+</body>
+</html>

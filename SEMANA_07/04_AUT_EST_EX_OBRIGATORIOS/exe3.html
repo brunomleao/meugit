@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiscal</title>
+</head>
+<body>
+    <h1>Checador</h1>
+    Insira aqui o número de celular a ser checado: <input type="text" name="num" id="num"> <input type="button" value="Checar" onclick="checar()">
+    <br>
+    <strong><p>Lembrando que seu número deve respeitar o formato "(XX)XXXXX-XXXX" para ser aprovado!</p></strong>
+    <div id="res"></div>
+
+    <script>
+        function checar(){
+            var num = document.getElementById("num").value
+            var res = document.getElementById("res")
+            num.split()
+            var n = num.length
+            if (n===14) {
+                if ((num[0]==="(") && (num[3]===")") && (num[9]==="-")) {
+                    res.innerHTML = ("O valor está inserido corretamente!")
+                } else{
+                    res.innerHTML = ("O valor informado não respeita o formado indicado!")
+                }
+            } else{
+                res.innerHTML = ("O valor informado não respeita o formado indicado!")
+            }
+        }
+    </script>
+</body>
+</html>
