@@ -53,9 +53,9 @@
             res2.innerHTML += (`Média do aluno ${i+1}: ${media[i]}<br>`)
         }
         var mediageral = (somap+somat)/(n*2)
-        res2.innerHTML +=(`<br>Media geral: ${mediageral}<br>`)
-        res2.innerHTML +=(`<br>Média aritmética das notas de prova: ${mediap}<br>`)
-        res2.innerHTML +=(`<br>Média aritmética das notas de trabalho: ${mediat}<br>`)
+        res2.innerHTML +=(`<br>Media geral: ${mediageral.toFixed(2)}<br>`)
+        res2.innerHTML +=(`<br>Média aritmética das notas de prova: ${mediap.toFixed(2)}<br>`)
+        res2.innerHTML +=(`<br>Média aritmética das notas de trabalho: ${mediat.toFixed(2)}<br>`)
         res2.innerHTML +=(`<br>Menor nota de prova é ${menorp} e a maior nota é ${maiorp}<br>`)
         res2.innerHTML +=(`<br>Menor nota de trabalho é ${menort} e a maior nota é ${maiort}<br>`)
         }
